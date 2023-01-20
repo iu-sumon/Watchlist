@@ -1,0 +1,51 @@
+.watchlist-body
+{
+    background-color: black;
+    color: white;
+}
+.watchlist-parent
+{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap:1rem;
+    border-bottom: .5px solid gray;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.watchlist-fst-column
+{
+    font-size: 0.7rem;
+    
+}
+.watchlist-lst-column
+{
+    display: grid;
+    grid-template-columns:  repeat(2,1fr);
+    position: relative;
+    grid-gap:0.6rem;
+     
+}
+.watchlist-lst-column-bottom-row
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    font-size: 0.7rem;
+}
+.watchlist-lst-column-child2
+{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -44% -93%;
+}
+.watchlist-lst-column-middle
+{  
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 5px;
+
+}
+.watchlist-li-container
+{
+padding-left: 0px !important;
+}
