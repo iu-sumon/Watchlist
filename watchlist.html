@@ -8,6 +8,8 @@
 
         <!-- For page CSS -->
     <link rel="stylesheet" href="watchlist.css">
+    <link rel="stylesheet" href="mobile-custom-style.css">
+    <link rel="stylesheet" href="mobile-stocks-info.css">
 
      <!-- For Bootstrap CDN -->
      <link
@@ -18,6 +20,15 @@
    />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <style>
+    .top-navbar
+    {
+        width: 100%;
+        position: fixed; 
+        top: 0;
+        background: #000;
+        z-index: 9457;
+        margin-top: 20px;
+    }
     .mt-logo
     {   display: flex;
         width: 50px;
@@ -100,176 +111,440 @@
    </style>
 </head>
 <body class="watchlist-body">
-    <div class="container-fluid">
-     <h1 class="text-center text-white">watchlist</h1>
-     <ul class="watchlist-li-container">
-        <li class="watchlist-parent">
-            <div class="watchlist-fst-column">
-                <div class="h-100 font-weight-bold">
-                    <span >EURUSD</span>
-                </div>
-                <div>
-                    <span>13, 21:44:07</span>
-                </div>
-               
-            </div>
-             <div class="watchlist-lst-column">
-                <div class="watchlist-lst-column-child1">
-                    <div class="bg-danger text-center font-weight-bold rounded h-100">
-                        <span>25</span>
-                    </div>
-                    <div class="watchlist-lst-column-bottom-row">
-                        <span class="text-left">+/-</span>
-                        <span class="text-right">-0.00250</span>
-                    </div>
-                </div>
-                <div class="watchlist-lst-column-child2">
-                      <span class="bg-secondary watchlist-lst-column-middle">0.4</span>
-                </div>
-                <div class="watchlist-lst-column-child3">
-                    <div class="bg-success font-weight-bold text-center rounded h-100">
-                        <span>25</span>
-                    </div>
-                    <div class="watchlist-lst-column-bottom-row">
-                        <span class="text-left">+/-</span>
-                        <span class="text-right">-0.00250</span>
-                    </div>
-                </div>
-             </div>
-        </li>
-        <li class="watchlist-parent">
-            <div class="watchlist-fst-column">
-                <div class="h-100 font-weight-bold">
-                    <span >EURUSD</span>
-                </div>
-                <div>
-                    <span>13, 21:44:07</span>
-                </div>
-               
-            </div>
-             <div class="watchlist-lst-column">
-                <div class="watchlist-lst-column-child1">
-                    <div class="bg-danger text-center font-weight-bold rounded h-100">
-                        <span>25</span>
-                    </div>
-                    <div class="watchlist-lst-column-bottom-row">
-                        <span class="text-left">+/-</span>
-                        <span class="text-right">-0.00250</span>
-                    </div>
-                </div>
-                <div class="watchlist-lst-column-child2">
-                      <span class="bg-secondary watchlist-lst-column-middle">0.4</span>
-                </div>
-                <div class="watchlist-lst-column-child3">
-                    <div class="bg-success font-weight-bold text-center rounded h-100">
-                        <span>25</span>
-                    </div>
-                    <div class="watchlist-lst-column-bottom-row">
-                        <span class="text-left">+/-</span>
-                        <span class="text-right">-0.00250</span>
-                    </div>
-                </div>
-             </div>
-        </li>
-        <li class="watchlist-parent">
-            <div class="watchlist-fst-column">
-                <div class="h-100 font-weight-bold">
-                    <span >EURUSD</span>
-                </div>
-                <div>
-                    <span>13, 21:44:07</span>
-                </div>
-               
-            </div>
-             <div class="watchlist-lst-column">
-                <div class="watchlist-lst-column-child1">
-                    <div class="bg-danger text-center font-weight-bold rounded h-100">
-                        <span>25</span>
-                    </div>
-                    <div class="watchlist-lst-column-bottom-row">
-                        <span class="text-left">+/-</span>
-                        <span class="text-right">-0.00250</span>
-                    </div>
-                </div>
-                <div class="watchlist-lst-column-child2">
-                      <span class="bg-secondary watchlist-lst-column-middle">0.4</span>
-                </div>
-                <div class="watchlist-lst-column-child3">
-                    <div class="bg-success font-weight-bold text-center rounded h-100">
-                        <span>25</span>
-                    </div>
-                    <div class="watchlist-lst-column-bottom-row">
-                        <span class="text-left">+/-</span>
-                        <span class="text-right">-0.00250</span>
-                    </div>
-                </div>
-             </div>
-        </li>
-        <li class="watchlist-parent">
-            <div class="watchlist-fst-column">
-                <div class="h-100 font-weight-bold">
-                    <span >EURUSD</span>
-                </div>
-                <div>
-                    <span>13, 21:44:07</span>
-                </div>
-               
-            </div>
-             <div class="watchlist-lst-column">
-                <div class="watchlist-lst-column-child1">
-                    <div class="bg-danger text-center font-weight-bold rounded h-100">
-                        <span>25</span>
-                    </div>
-                    <div class="watchlist-lst-column-bottom-row">
-                        <span class="text-left">+/-</span>
-                        <span class="text-right">-0.00250</span>
-                    </div>
-                </div>
-                <div class="watchlist-lst-column-child2">
-                      <span class="bg-secondary watchlist-lst-column-middle">0.4</span>
-                </div>
-                <div class="watchlist-lst-column-child3">
-                    <div class="bg-success font-weight-bold text-center rounded h-100">
-                        <span>25</span>
-                    </div>
-                    <div class="watchlist-lst-column-bottom-row">
-                        <span class="text-left">+/-</span>
-                        <span class="text-right">-0.00250</span>
-                    </div>
-                </div>
-             </div>
-        </li>
-     </ul>
-    
-    </div> 
+<!-- Top Header -->
+<div>
 
+    <div class="top-navbar">
 
-    <div class="mt-card-container">
-
-        <div class="mt-card">
+        <div class="mobile-stock-info-header">
             
-            <div class="ribbon-wrapper-red">
-                <div class="ribbon-red">Demo</div>
+                <div  class="d-flex align-items-center ">
+                    <span id="backToHomepage"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></span>
+                    <span id="companyTitle" class="ml-1">Google</span>
+                </div> 
+                
+                <div>
+                    <span id="favorite-icon" class="inner"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                    <span id="bell-icon" class="inner"><i class="fa fa-bell-o" aria-hidden="true"></i></span>
+                    <span id="search-icon" class="inner"><i class="fa fa-search" aria-hidden="true"></i></span>
+                </div>
+            
+            <div id="company-full-name" class="highlight-subtitle">
+                Lorem ipsum dolor sit amet.
             </div>
-              
-            <img class="mt-logo" src="./photo/mt5.png" alt="Card image cap">
-            <div>
-                <ul class="mt-card-body mt-3">
-                    <li>MetaTrader 5 Android Demo</li>
-                    <li><a href="">MetaQutes Software Corp.</a></li>
-                    <li class="mt-3">3927829 - MetaQutes-Demo</li>
-                    <li>Access Point HK 1, Hedge</li>
-                    <li class="mt-3 font-weight-bold">10 000.00 USD</li>
-                </ul>
-            </div> 
-           
-            <div class="mt-info">
-                <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+        </div> 
+
+        <div class="row mt-3">
+            <div class="col-5">
+                <div class="highlight-box">
+                    <div class="highlight-title-box clearfix">
+                        <div class="highlight-title false">
+
+                        </div>
+                    </div> 
+                    <div class="highlight-counter">
+                        <div class="highlight-counter-style green false">
+                            <div class="price g-clickable">167.45</div>
+                            <div class="changePrice">
+                                <span class="ratio mb-1">+2.38</span>
+                                <span class="ratio"> +1.44% </span>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="arrow-icon">
+                    <i class="fa fa-angle-double-down"></i> 
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="highlight-second-chlid">
+                    <div class="highlight-subtitle buysellbtn">
+
+                        <button class="parallelogram1 column-title-left">
+                            BUY
+                        </button>
+                        <button class="parallelogram2 column-value-right">
+                            SELL
+                        </button>
+                    </div>
+
+                </div>
             </div>
 
-        </div>
-      
+        </div> 
+            
     </div>
+
+     <div class="mobile-stock-info-col-pad">
+ 
+        <!-- Table -->
+        <div>
+            <div id="full-details">
+                <div class="row mt-3 col-pad">
+                    <div class="col highlight-column-name">
+                        OPEN
+                        <div class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        HIGH
+                        <div class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        LOW
+                        <div class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        YCP
+                        <div id="yesterday_close" class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-last-column-name">
+                        TURNOVER
+                        <div class="highlight-column-value">-</div>
+                    </div>
+                </div>
+                <div class="row mt-2 col-pad">
+                    <div class="col highlight-column-name">
+                        UP LIMIT
+                        <div class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        DOWN LIMIT
+                        <div class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        FLOOR
+                        <div id="floor_data" class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        52W H/L
+                        <div id="whl52" class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-last-column-name">
+                        VOLUME
+                        <div class="highlight-column-value">-</div>
+                    </div>
+                </div>
+                <div class="row mt-2 col-pad">
+                    <div class="col highlight-column-name">
+                        PE
+                        <div id="p_e" class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        RESERVE
+                        <div id="reserve" class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        NAV
+                        <div id="nav" class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        DIV.YIELD
+                        <div id="dividend_yield" class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-last-column-name">
+                        YEAR.END
+                        <div id="year_end" class="highlight-column-value">-</div>
+                    </div>
+                </div>
+                <div class="row mt-2 mb-1 col-pad">
+                    <div class="col highlight-column-name">
+                        FREE FLOAT
+                        <div id="free_float" class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        TOT. SHARE
+                        <div id="total_share" class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        MARKET CAP
+                        <div id="market_cap" class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-column-name">
+                        PAIDUP
+                        <div id="paid_up_capital" class="highlight-column-value">-</div>
+                    </div>
+                    <div class="col highlight-last-column-name">
+                        AUTHORIZED
+                        <div id="authorized_capital" class="highlight-column-value">-</div>
+                    </div>
+                </div>
+                <div class="row mt-2 mb-1 col-pad">
+                    <table class="highlights-data-table">
+                        <tr>
+                            <td class="highlight-column-name">Q1</td>
+                            <td class="highlight-column-name">Q2</td>
+                            <td class="highlight-column-name">Q3</td>
+                            <td class="highlight-column-name">EPS(TTM)</td>
+                            <!-- <td class="highlight-column-name">DIV.<span id="declaration_date">2021</span></td> -->
+                            <td class="highlight-column-name">LAST.DIV</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight-column-value"><span id="q1_latest"></span>
+                                <span id="q1_latest_diff"
+                                    class="highlight-column-value of_number_to_be_evaluated small-font"></span>
+                            </td>
+                            <td class="highlight-column-value"><span id="q2_latest"></span>
+                                <span id="q2_latest_diff"
+                                    class="highlight-column-value of_number_to_be_evaluated small-font"></span>
+                            </td>
+                            <td class="highlight-column-value"><span id="q3_latest"></span>
+                                <span id="q3_latest_diff"
+                                    class="highlight-column-value of_number_to_be_evaluated small-font"></span>
+                            </td>
+                            <td class="highlight-column-value"><span id="eps_annual_ttm"></span>
+                                <span id="eps_annual_ttm_diff"
+                                    class="highlight-column-value of_number_to_be_evaluated small-font"></span>
+                            </td>
+                            <td class="highlight-column-value"><span id="dividend-cash"></span>
+                                <span id="diff_between_cash"
+                                    class="highlight-column-value of_number_to_be_evaluated small-font"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="q1_earlier" class="highlight-column-value prev">15</td>
+                            <td id="q2_earlier" class="highlight-column-value prev">15</td>
+                            <td id="q3_earlier" class="highlight-column-value prev">15</td>
+                            <td id="eps_annual_latest" class="highlight-column-value prev">15</td>
+                            <td id="dividend-stock" class="highlight-column-value">15</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row col-pad">
+                    <div class="highlight-subtitle">Holdings [as on <span id="holding-subtitle"></span>]
+                    </div>
+                    <table class="highlights-data-table">
+                        <tr>
+                            <td class="highlight-column-name">Director</td>
+                            <td class="highlight-column-name">Govt.</td>
+                            <td class="highlight-column-name">Institute</td>
+                            <td class="highlight-column-name">Foreign</td>
+                            <td class="highlight-column-name">Public</td>
+                        </tr>
+
+                        <tr>
+                            <td class="highlight-column-value"><span id="sponsor_director_latest"></span>
+                                <span id="sponsor_director_change"
+                                    class="highlight-column-value of_number_to_be_evaluated small-font"></span>
+                            </td>
+                            <td class="highlight-column-value"><span id="govt_share_latest"></span>
+                                <span id="govt_share_change"
+                                    class="highlight-column-value of_number_to_be_evaluated small-font"></span>
+                            </td>
+                            <td class="highlight-column-value"><span id="institute_share_latest"></span>
+                                <span id="institute_share_change"
+                                    class="highlight-column-value of_number_to_be_evaluated small-font"></span>
+                            </td>
+                            <td class="highlight-column-value"><span id="foreign_share_latest"></span>
+                                <span id="foreign_share_change"
+                                    class="highlight-column-value of_number_to_be_evaluated small-font"></span>
+                            </td>
+                            <td class="highlight-column-value">
+                                <span id="public_share_change"
+                                    class="highlight-column-value of_number_to_be_evaluated small-font"></span>
+                                <span id="public_share_latest"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="sponsor_director" class="highlight-column-value prev">15</td>
+                            <td id="govt_share" class="highlight-column-value prev">15</td>
+                            <td id="institute_share" class="highlight-column-value prev">15</td>
+                            <td id="foreign_share" class="highlight-column-value prev">15</td>
+                            <td id="public_share" class="highlight-column-value prev">15</td>
+                        </tr>
+                        <tr>
+                            <td id="director_share_percentage" class="highlight-column-value small-font">
+                                15cr</td>
+                            <td id="govt_share_percentage" class="highlight-column-value small-font">15cr
+                            </td>
+                            <td id="institute_share_percentage" class="highlight-column-value small-font">
+                                15cr</td>
+                            <td id="foreign_share_percentage" class="highlight-column-value small-font">15cr
+                            </td>
+                            <td id="public_share_percentage" class="highlight-column-value"
+                                style="font-size:8px">
+                                15cr
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            
+            <ul class="watchlist-li-container">
+               <li class="watchlist-parent">
+                   <div class="watchlist-fst-column">
+                       <div class="h-100 font-weight-bold">
+                           <span >EURUSD</span>
+                       </div>
+                       <div>
+                           <span>13, 21:44:07</span>
+                       </div>
+                      
+                   </div>
+                    <div class="watchlist-lst-column">
+                       <div class="watchlist-lst-column-child1">
+                           <div class="bg-danger text-center font-weight-bold rounded h-100">
+                               <span>25</span>
+                           </div>
+                           <div class="watchlist-lst-column-bottom-row">
+                               <span class="text-left">+/-</span>
+                               <span class="text-right">-0.00250</span>
+                           </div>
+                       </div>
+                       <div class="watchlist-lst-column-child2">
+                             <span class="bg-secondary watchlist-lst-column-middle">0.4</span>
+                       </div>
+                       <div class="watchlist-lst-column-child3">
+                           <div class="bg-success font-weight-bold text-center rounded h-100">
+                               <span>25</span>
+                           </div>
+                           <div class="watchlist-lst-column-bottom-row">
+                               <span class="text-left">+/-</span>
+                               <span class="text-right">-0.00250</span>
+                           </div>
+                       </div>
+                    </div>
+               </li>
+               <li class="watchlist-parent">
+                   <div class="watchlist-fst-column">
+                       <div class="h-100 font-weight-bold">
+                           <span >EURUSD</span>
+                       </div>
+                       <div>
+                           <span>13, 21:44:07</span>
+                       </div>
+                      
+                   </div>
+                    <div class="watchlist-lst-column">
+                       <div class="watchlist-lst-column-child1">
+                           <div class="bg-danger text-center font-weight-bold rounded h-100">
+                               <span>25</span>
+                           </div>
+                           <div class="watchlist-lst-column-bottom-row">
+                               <span class="text-left">+/-</span>
+                               <span class="text-right">-0.00250</span>
+                           </div>
+                       </div>
+                       <div class="watchlist-lst-column-child2">
+                             <span class="bg-secondary watchlist-lst-column-middle">0.4</span>
+                       </div>
+                       <div class="watchlist-lst-column-child3">
+                           <div class="bg-success font-weight-bold text-center rounded h-100">
+                               <span>25</span>
+                           </div>
+                           <div class="watchlist-lst-column-bottom-row">
+                               <span class="text-left">+/-</span>
+                               <span class="text-right">-0.00250</span>
+                           </div>
+                       </div>
+                    </div>
+               </li>
+               <li class="watchlist-parent">
+                   <div class="watchlist-fst-column">
+                       <div class="h-100 font-weight-bold">
+                           <span >EURUSD</span>
+                       </div>
+                       <div>
+                           <span>13, 21:44:07</span>
+                       </div>
+                      
+                   </div>
+                    <div class="watchlist-lst-column">
+                       <div class="watchlist-lst-column-child1">
+                           <div class="bg-danger text-center font-weight-bold rounded h-100">
+                               <span>25</span>
+                           </div>
+                           <div class="watchlist-lst-column-bottom-row">
+                               <span class="text-left">+/-</span>
+                               <span class="text-right">-0.00250</span>
+                           </div>
+                       </div>
+                       <div class="watchlist-lst-column-child2">
+                             <span class="bg-secondary watchlist-lst-column-middle">0.4</span>
+                       </div>
+                       <div class="watchlist-lst-column-child3">
+                           <div class="bg-success font-weight-bold text-center rounded h-100">
+                               <span>25</span>
+                           </div>
+                           <div class="watchlist-lst-column-bottom-row">
+                               <span class="text-left">+/-</span>
+                               <span class="text-right">-0.00250</span>
+                           </div>
+                       </div>
+                    </div>
+               </li>
+               <li class="watchlist-parent">
+                   <div class="watchlist-fst-column">
+                       <div class="h-100 font-weight-bold">
+                           <span >EURUSD</span>
+                       </div>
+                       <div>
+                           <span>13, 21:44:07</span>
+                       </div>
+                      
+                   </div>
+                    <div class="watchlist-lst-column">
+                       <div class="watchlist-lst-column-child1">
+                           <div class="bg-danger text-center font-weight-bold rounded h-100">
+                               <span>25</span>
+                           </div>
+                           <div class="watchlist-lst-column-bottom-row">
+                               <span class="text-left">+/-</span>
+                               <span class="text-right">-0.00250</span>
+                           </div>
+                       </div>
+                       <div class="watchlist-lst-column-child2">
+                             <span class="bg-secondary watchlist-lst-column-middle">0.4</span>
+                       </div>
+                       <div class="watchlist-lst-column-child3">
+                           <div class="bg-success font-weight-bold text-center rounded h-100">
+                               <span>25</span>
+                           </div>
+                           <div class="watchlist-lst-column-bottom-row">
+                               <span class="text-left">+/-</span>
+                               <span class="text-right">-0.00250</span>
+                           </div>
+                       </div>
+                    </div>
+               </li>
+            </ul>
+           
+        </div> 
+
+        <div class="mt-card-container">
+
+            <div class="mt-card">
+                
+                <div class="ribbon-wrapper-red">
+                    <div class="ribbon-red">Demo</div>
+                </div>
+                  
+                <img class="mt-logo" src="./photo/mt5.png" alt="Card image cap">
+                <div>
+                    <ul class="mt-card-body mt-3">
+                        <li>MetaTrader 5 Android Demo</li>
+                        <li><a href="">MetaQutes Software Corp.</a></li>
+                        <li class="mt-3">3927829 - MetaQutes-Demo</li>
+                        <li>Access Point HK 1, Hedge</li>
+                        <li class="mt-3 font-weight-bold">10 000.00 USD</li>
+                    </ul>
+                </div> 
+               
+                <div class="mt-info">
+                    <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                </div>
+    
+            </div>
+          
+        </div>
+
+     </div>
+
+</div>    
     <!-- For Bootstrap JS -->
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
