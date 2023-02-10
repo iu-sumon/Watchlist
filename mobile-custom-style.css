@@ -2155,3 +2155,126 @@ select.flat-select {
     left: 40px;
     color: var(--font-color);
 }
+
+ /* BID and ASK Data table style Start */
+
+ .bidAndask-table-parent {
+    height: fit-content;
+  }
+  .bidAndask-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  .bidAndask-table-parent .bidAndask-thead th {
+    background-color: var(--timeAndsales-thead-bg);
+    position: sticky;
+    top: 0;
+  }
+  .bid-sl-name {
+    font-size: 14px;
+    white-space: nowrap;
+    padding: 8px;
+    width: 20px;
+  }
+  .bid-sl-value {
+    font-size: 14px;
+    white-space: nowrap;
+    padding: 8px;
+    width: 20px;
+  }
+  .ask-sl-name {
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: right;
+    padding: 8px;
+    width: 20px;
+  }
+  .ask-sl-value {
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: right;
+    padding: 8px;
+    width: 20px;
+  }
+  
+  .bid-column-name {
+    font-size: 14px;
+    white-space: nowrap;
+    padding: 8px;
+    text-align: right;
+  }
+  .bid-column-value {
+    font-size: 14px;
+    white-space: nowrap;
+    padding: 8px;
+    text-align: right;
+  }
+  .bidQ-column-name {
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: left;
+    padding: 8px;
+  }
+  .bidQ-column-value {
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: left;
+    padding: 8px;
+  }
+  .ask-column-name {
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: left;
+    padding: 8px;
+  }
+  .ask-column-value {
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: left;
+    padding: 8px;
+  }
+  .askQ-column-name {
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: right;
+    padding: 8px;
+  }
+  .askQ-column-value {
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: right;
+    padding: 8px;
+  }
+  
+  .bidAndask-middle-column-name {
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: center;
+    background: var(--bidAndask-middle-column-bg) !important;
+  }
+  .bidAndask-middle-column-value {
+    white-space: nowrap;
+    text-align: center;
+    background: var(--bidAndask-middle-column-bg);
+    padding-top: 0px !important;
+    padding-left: 3px;
+    padding-bottom: 22px;
+  }
+  
+  .bidAndask-tbody tr:nth-child(even) {
+    background-color: var(--bidAndask-tr-bg);
+  }
+
+  .bidAndask-row
+  {
+    display: none;
+  }
+
+  .tr-show
+  {
+    display: table-row;
+  }
+
+
+  
