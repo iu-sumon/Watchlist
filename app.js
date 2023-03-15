@@ -144,3 +144,40 @@ myChart.on('datazoom', function (evt) {
 //   console.log(option)
 //   console.log(option.dataZoom[0].startValue, option.dataZoom[0].endValue);
 // });
+
+
+function onCompanySelect()
+{
+  console.log('yes')
+  var mobile_global_profile = document.getElementById("global-top");
+  if (mobile_global_profile.style.display === "block") {
+      mobile_global_profile.style.display = "none";
+      console.log('none')
+  } 
+  window.location.href = "watchlist.html";
+
+  // else {
+  //     mobile_global_profile.style.display = "none";
+  // }
+}
+
+function backToStock()
+{
+  window.location.href = "stock.html";
+  var mobile_global_profile = document.getElementById("global-top");
+  if (mobile_global_profile.style.display === "none") {
+      mobile_global_profile.style.display = "block";
+  } 
+  // else {
+  //     mobile_global_profile.style.display = "none";
+  // }
+}
+
+function profile_toggle() {
+  var mobile_global_profile = document.getElementById("mobile-global-profile");
+  if (mobile_global_profile.style.display === "none") {
+      mobile_global_profile.style.display = "block";
+  } else {
+      mobile_global_profile.style.display = "none";
+  }
+}

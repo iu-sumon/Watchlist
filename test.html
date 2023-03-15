@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+          }
+          .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: auto;
+          }
+            h1 {
+              font-family: Montserrat, sans-serif;
+              color: #262626;
+            }
+           
+          
+          .button {
+            width: 150px;
+            height: 50px;
+            background-color: #262626;
+            border: none;
+            color: #fce38a;
+            font-size: 25px;
+            cursor: pointer;
+          }
+          .banner {
+            width: 250px;
+            display: none;
+            position: absolute;
+            top: 60px;
+            background-color: #262626;
+          }
+            p {
+              color: #fce38a;
+              text-align: center;
+              padding: 25px 0;
+              margin: auto;
+            }
+          
+          .open-banner {
+            display: flex;
+          }
+          
+    </style>
+</head>
+<body>
+    <div class="container">
+  
+        <button class="button">Toggle</button>
+        <div class="banner">
+          <p>Click outside to close me or click on button</p>
+        </div>
+      </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        //   You can get different selectors (class, id, tags...)
+        var button = document.querySelector(".button");
+        var banner = document.querySelector(".banner");
+      
+        // Global open/close functions
+        var open = function() {
+          button.classList.add("open-button");
+          banner.classList.add("open-banner");
+        };
+      
+         close = function() {
+          button.classList.remove("open-button");
+          banner.classList.remove("open-banner");
+        };
+      
+        // Check click on button
+        button.addEventListener("mousedown", function() {
+          if (!button.classList.contains("open-button")) {
+            open();
+          } else {
+            close();
+          }
+        });
+      
+        // Close when user click outside
+        document.body.addEventListener("mousedown", function(e) {
+          let isClickInsideButton = button.contains(e.target);
+          let isClickInsideBanner = banner.contains(e.target);
+      
+          if (!isClickInsideButton && !isClickInsideBanner) {
+            close();
+          }
+        });
+      });
+      
+</script>
+
+</body>
+</html>

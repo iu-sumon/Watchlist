@@ -29,10 +29,10 @@
       .top-navbar {
         width: 100%;
         position: fixed;
-        top: 0;
+        top: 55px;
         background: #000;
-        z-index: 9457;
-        margin-top: 20px;
+        z-index: 19;
+      
       }
       .mt-logo {
         display: flex;
@@ -109,12 +109,62 @@
     </style>
   </head>
   <body class="watchlist-body">
+    <button id="toggle-btn">Toggle Card</button>
+    <div id="card" style="display: none;">
+      <div class="card-content">
+        <h2>Card Title</h2>
+        <p>Card content goes here.</p>
+      </div>
+    </div>
+
+    <div id="global-top" class="portfolio-mobile-link border-top pt-1 border-bottom pb-1 fixed-top" style="display: block;">
+            
+      <div align="left">
+        <div>
+                <span class="portfolio-mobile-click">
+                    <span><i class="fa fa-chevron-down"></i></span>
+                    <span id="ticker" class="portfolio-mobile-row-titles">ACIFORMULA</span>
+                </span>
+        </div>
+
+        <div class="container-subtitles">
+                <span class="portfolio-mobile-row-sub-titles">181.86</span>
+                <span>
+                    <i  class="fa fa-arrow-right portfolio-mobile-right-icon" aria-hidden="true" ></i> 
+                </span>
+                <span class="portfolio-mobile-row-sub-titles">201.2</span><br />
+        </div>
+      </div>
+
+      <div align="center" class="pl-3">
+        <button
+          class="portfolio-mobile-new-buy-order"
+          title="Place BUY Order"
+        >
+          BUY
+        </button>
+        <button
+          class=" portfolio-mobile-new-sell-order ml-2"
+          title="Place SELL Order"
+        >
+          SELL
+        </button>
+      </div>
+
+      <div align="right" class=" d-flex flex-column">
+          <span class="portfolio-mobile-prices">21274.75</span> 
+          <span class="portfolio-mobile-volumes">10.63%</span>
+      </div>
+  </div> 
+  
+
     <!-- Top Header -->
     <div>
+      
       <div class="top-navbar">
         <div class="mobile-stock-info-header">
           <div class="d-flex align-items-center">
-            <span id="backToHomepage"
+            <span id="backToHomepage" onclick="backToStock()"
               ><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i
             ></span>
             <span id="companyTitle" class="ml-1">Google</span>
@@ -351,45 +401,6 @@
 
 
 
-        <div class="portfolio-mobile-link border-top pt-1 border-bottom pb-1 mt-5">
-            
-            <div align="left">
-              <div>
-                      <span class="portfolio-mobile-click">
-                          <span><i class="fa fa-chevron-down"></i></span>
-                          <span id="ticker" class="portfolio-mobile-row-titles">ACIFORMULA</span>
-                      </span>
-              </div>
-  
-              <div class="container-subtitles">
-                      <span class="portfolio-mobile-row-sub-titles">181.86</span>
-                      <span>
-                          <i  class="fa fa-arrow-right portfolio-mobile-right-icon" aria-hidden="true" ></i> 
-                      </span>
-                      <span class="portfolio-mobile-row-sub-titles">201.2</span><br />
-              </div>
-            </div>
-  
-            <div align="center" class="pl-3">
-              <button
-                class="portfolio-mobile-new-buy-order"
-                title="Place BUY Order"
-              >
-                BUY
-              </button>
-              <button
-                class=" portfolio-mobile-new-sell-order ml-2"
-                title="Place SELL Order"
-              >
-                SELL
-              </button>
-            </div>
-  
-            <div align="right" class=" d-flex flex-column">
-                <span class="portfolio-mobile-prices">21274.75</span> 
-                <span class="portfolio-mobile-volumes">10.63%</span>
-            </div>
-          </div>
   
         <!-- Table -->
         <div class="mt-5">
@@ -655,6 +666,115 @@
             </div>
           </div>
         </div>
+    
+        <div class="mobile-stock-info-col-pad">
+          <div class="row m-0">
+            <div class="column" style="background-color:#eee;">
+              <h2>Column 1</h2>
+            </div>
+            <div class="column" style="background-color:#eee;">
+              <h2>Column 2</h2>
+            </div>
+          </div>
+            <div class="row m-0">
+            <div class="column" style="background-color:#eee;">
+              <h2>Column 1</h2>
+            </div>
+            <div class="column" style="background-color:#eee;">
+              <h2>Column 2</h2>
+            </div>
+          </div>
+            <div class="row m-0">
+            <div class="column" style="background-color:#eee;">
+              <h2>Column 1</h2>
+            </div>
+            <div class="column" style="background-color:#eee;">
+              <h2>Column 2</h2>
+            </div>
+          </div>
+         
+        </div>
+        
+
+        <div class="container">
+          <form action="action_page.php">
+            <div class="row">
+              <div class="col-5 p-0 border text-center text-aqua">
+                <label for="fname">First Name</label>
+              </div>
+              <div class="col-7 p-0 border">
+                <input type="text" id="" name="" placeholder="Your name..">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5 p-0 border text-center text-aqua">
+                <label for="fname">First Name</label>
+              </div>
+              <div class="col-7 p-0 border">
+                <input type="text" id="" name="" placeholder="Your name..">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5 p-0 border text-center text-aqua">
+                <label for="fname">First Name</label>
+              </div>
+              <div class="col-7 p-0 border">
+                <input type="text" id="" name="" placeholder="Your name..">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5 p-0 border text-center text-aqua">
+                <label for="fname">First Name</label>
+              </div>
+              <div class="col-7 p-0 border">
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+              </div>
+            </div>
+        
+            <div class="row">
+              <input type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+
+        <div class="row">
+          <div class="container">
+            <h2>Resizable Columns</h2>
+            <table class="table table-bordered" data-resizable-columns-id="demo-table-v2">
+              <thead>
+                <tr>
+                  <th data-resizable-column-id="nr">#</th>
+                  <th data-resizable-column-id="first_name">First Name</th>
+                  <th data-resizable-column-id="nickname">Nickname</th>
+                  <th data-resizable-column-id="last_name">Last Name</th>
+                  <th data-resizable-column-id="username" id="username-column">Username</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Dude Meister</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Jacob</td>
+                  <td>Barney von Matterhorn</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>What</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+        </div>
 
         <div class="row">
           <div class="col-12">
@@ -663,7 +783,7 @@
                   </div>
               </div>
  
-      </div>
+        </div>
 
         <div>
           <ul class="watchlist-li-container">
@@ -848,8 +968,13 @@
             </div>
           </div>
         </div>
+
+
       </div>
+
+      
     </div>
+ 
     <!-- For Bootstrap JS -->
     <!-- <script src="js/echarts.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.3/echarts.min.js"

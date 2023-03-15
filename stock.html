@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="mobile-watchlist.css">
+    <link rel="stylesheet" href="mobile-custom-style.css">
+    <link rel="stylesheet" href="mobile-stocks-info.css" />
+       <!-- For Bootstrap CDN -->
+       <link
+       rel="stylesheet"
+       href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+       crossorigin="anonymous"
+     />
+     <link
+       rel="stylesheet"
+       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+       integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+       crossorigin="anonymous"
+       referrerpolicy="no-referrer"
+     />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div id="global-top" class="portfolio-mobile-link border-top pt-1 border-bottom pb-1 fixed-top" style="display: block;">
+            
+        <div align="left">
+          <div>
+                  <span class="portfolio-mobile-click">
+                      <span><i class="fa fa-chevron-down"></i></span>
+                      <span id="ticker" class="portfolio-mobile-row-titles">ACIFORMULA</span>
+                  </span>
+          </div>
+  
+          <div class="container-subtitles">
+                  <span class="portfolio-mobile-row-sub-titles">181.86</span>
+                  <span>
+                      <i  class="fa fa-arrow-right portfolio-mobile-right-icon" aria-hidden="true" ></i> 
+                  </span>
+                  <span class="portfolio-mobile-row-sub-titles">201.2</span><br />
+          </div>
+        </div>
+  
+        <div align="center" class="pl-3">
+          <button
+            class="portfolio-mobile-new-buy-order"
+            title="Place BUY Order"
+          >
+            BUY
+          </button>
+          <button
+            class=" portfolio-mobile-new-sell-order ml-2"
+            title="Place SELL Order"
+          >
+            SELL
+          </button>
+        </div>
+  
+        <div align="right" class=" d-flex flex-column">
+            <span class="portfolio-mobile-prices">21274.75</span> 
+            <span class="portfolio-mobile-volumes">10.63%</span>
+        </div>
+    </div>
+    <div class="container-fluid pt-1 pl-0 pr-0" id="watchlistContainer" style="margin-top: 150px;">
+
+        
+      <div>
+        <div class="row">
+          <div class="col-12">
+            <div class="jss4203">
+              <div
+                class="jss3964-watchlist-mobile watchlist-table-row-style position-relative jss222"
+              >
+                <div class="table-first-column table-first-column-icons">
+                  <div id="mobile-landscape-image">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                    <p class="mobile-table-first-column-titles mt-1">Rotate</p>
+                  </div>
+                  <div id="watchlist-add-icon">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <p id="add_1" class="mobile-table-first-column-titles mt-1">
+                      Add
+                    </p>
+                  </div>
+                  <div id="watchlist-remove-icon">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <p
+                      id="remove_2"
+                      onclick="delete_watchlist(this.id)"
+                      class="mobile-table-first-column-titles mt-1"
+                    >
+                      Delete
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="table-end-column-title"
+                  class="watchlist-mobile-table-end-column mobile-table-first-end-column-titles"
+                >
+                  %Change
+                </div>
+                <div id="img-up">
+                  <i
+                    id="imageUpMobile"
+                    class="fa fa-play fa-rotate-270 mb-4"
+                    aria-hidden="true"
+                    onclick="sortAscending()"
+                    style="color: rgb(128, 128, 128)"
+                  ></i>
+                  <i
+                    id="imageDownMobile"
+                    class="fa fa-play fa-rotate-90 ml-1"
+                    aria-hidden="true"
+                    onclick="sortDescending()"
+                    style="color: rgb(128, 128, 128)"
+                  ></i>
+                </div>
+              </div>
+              <div id="dom-watchlist">
+                <ul id="watchlist-full-list" class="list">
+                  <li
+                    class="watchlist-mobile-table-row-style position-relative jss222"
+                  >
+                    <div
+                      class="table-first-column watchlist-row-content-align row-content-start"
+                    >
+                      <div>
+                        <div>
+                          <span
+                            onclick="onCompanySelect()"
+                            class="watchlist-mobile-row-company-title"
+                            >1JANATAMF</span
+                          >
+                          <span
+                            data-toggle="modal"
+                            data-target="#watchlistModal"
+                            ><i
+                              class="fa fa-info-circle watchlist-info-icon"
+                              aria-hidden="true"
+                            ></i
+                          ></span>
+                        </div>
+                        <div>
+                          <div>
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title ms-3"
+                              >T:
+                              <span
+                                class="JANATAMFPUBLIC_turnover watchlist-mobile-first-column-sub-value"
+                                >7,060</span
+                              ></span
+                            >&nbsp;
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title"
+                              >V:
+                              <span
+                                class="JANATAMFPUBLIC_vol watchlist-mobile-first-column-sub-value"
+                                >270</span
+                              ></span
+                            >&nbsp;
+                          </div>
+                          <br />
+                          <div>
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title"
+                              >H:
+                              <span
+                                class="JANATAMFPUBLIC_high watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >&nbsp;
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title ms-3"
+                              >L:
+                              <span
+                                class="JANATAMFPUBLIC_low watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="watchlist-table-middle-column watchlist-row-content-align"
+                    ></div>
+
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-price-column positive-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title JANATAMFPUBLIC_ltp"
+                        style="color: white !important"
+                        >26.2</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title JANATAMFPUBLIC_chg"
+                        >0.2</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title JANATAMFPUBLIC_chgper"
+                        >0.77%</span
+                      >
+                    </div>
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-change-column positive-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title JANATAMFPUBLIC_chg"
+                        style="color: white !important"
+                        >0.2</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title JANATAMFPUBLIC_ltp"
+                        >26.2</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title JANATAMFPUBLIC_chgper"
+                        >0.77%</span
+                      >
+                    </div>
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-perchange-column positive-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title JANATAMFPUBLIC_chgper"
+                        style="color: white !important"
+                        >0.77%</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title JANATAMFPUBLIC_ltp"
+                        >26.2</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title JANATAMFPUBLIC_chg"
+                        >0.2</span
+                      >
+                    </div>
+                  </li>
+                  <li
+                    class="watchlist-mobile-table-row-style position-relative jss222"
+                  >
+                    <div
+                      class="table-first-column watchlist-row-content-align row-content-start"
+                    >
+                      <div>
+                        <div>
+                          <span
+                            onclick="onCompanySelect('ABBANK','ABBANK.PUBLIC')"
+                            class="watchlist-mobile-row-company-title"
+                            >ABBANK</span
+                          >
+                          <span
+                            data-toggle="modal"
+                            data-target="#watchlistModal"
+                            ><i
+                              class="fa fa-info-circle watchlist-info-icon"
+                              aria-hidden="true"
+                            ></i
+                          ></span>
+                        </div>
+                        <div>
+                          <div>
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title ms-3"
+                              >T:
+                              <span
+                                class="ABBANKPUBLIC_turnover watchlist-mobile-first-column-sub-value"
+                                >5,59,000</span
+                              ></span
+                            >&nbsp;
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title"
+                              >V:
+                              <span
+                                class="ABBANKPUBLIC_vol watchlist-mobile-first-column-sub-value"
+                                >1000</span
+                              ></span
+                            >&nbsp;
+                          </div>
+                          <br />
+                          <div>
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title"
+                              >H:
+                              <span
+                                class="ABBANKPUBLIC_high watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >&nbsp;
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title ms-3"
+                              >L:
+                              <span
+                                class="ABBANKPUBLIC_low watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="watchlist-table-middle-column watchlist-row-content-align"
+                    ></div>
+
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-price-column positive-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title ABBANKPUBLIC_ltp"
+                        style="color: white !important"
+                        >559</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title ABBANKPUBLIC_chg"
+                        >39</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title ABBANKPUBLIC_chgper"
+                        >7.5%</span
+                      >
+                    </div>
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-change-column positive-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title ABBANKPUBLIC_chg"
+                        style="color: white !important"
+                        >39</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title ABBANKPUBLIC_ltp"
+                        >559</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title ABBANKPUBLIC_chgper"
+                        >7.5%</span
+                      >
+                    </div>
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-perchange-column positive-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title ABBANKPUBLIC_chgper"
+                        style="color: white !important"
+                        >7.5%</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title ABBANKPUBLIC_ltp"
+                        >559</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title ABBANKPUBLIC_chg"
+                        >39</span
+                      >
+                    </div>
+                  </li>
+                  <li
+                    class="watchlist-mobile-table-row-style position-relative jss222"
+                  >
+                    <div
+                      class="table-first-column watchlist-row-content-align row-content-start"
+                    >
+                      <div>
+                        <div>
+                          <span
+                            onclick="onCompanySelect('ACI','ACI.PUBLIC')"
+                            class="watchlist-mobile-row-company-title"
+                            >ACI</span
+                          >
+                          <span
+                            data-toggle="modal"
+                            data-target="#watchlistModal"
+                            ><i
+                              class="fa fa-info-circle watchlist-info-icon"
+                              aria-hidden="true"
+                            ></i
+                          ></span>
+                        </div>
+                        <div>
+                          <div>
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title ms-3"
+                              >T:
+                              <span
+                                class="ACIPUBLIC_turnover watchlist-mobile-first-column-sub-value"
+                                >1,11,00,000</span
+                              ></span
+                            >&nbsp;
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title"
+                              >V:
+                              <span
+                                class="ACIPUBLIC_vol watchlist-mobile-first-column-sub-value"
+                                >6000</span
+                              ></span
+                            >&nbsp;
+                          </div>
+                          <br />
+                          <div>
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title"
+                              >H:
+                              <span
+                                class="ACIPUBLIC_high watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >&nbsp;
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title ms-3"
+                              >L:
+                              <span
+                                class="ACIPUBLIC_low watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="watchlist-table-middle-column watchlist-row-content-align"
+                    ></div>
+
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-price-column positive-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title ACIPUBLIC_ltp"
+                        style="color: white !important"
+                        >1850</span
+                      >
+                      <span class="watchlist-mobile-row-sub-title ACIPUBLIC_chg"
+                        >1.2</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title ACIPUBLIC_chgper"
+                        >0.06%</span
+                      >
+                    </div>
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-change-column positive-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title ACIPUBLIC_chg"
+                        style="color: white !important"
+                        >1.2</span
+                      >
+                      <span class="watchlist-mobile-row-sub-title ACIPUBLIC_ltp"
+                        >1850</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title ACIPUBLIC_chgper"
+                        >0.06%</span
+                      >
+                    </div>
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-perchange-column positive-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title ACIPUBLIC_chgper"
+                        style="color: white !important"
+                        >0.06%</span
+                      >
+                      <span class="watchlist-mobile-row-sub-title ACIPUBLIC_ltp"
+                        >1850</span
+                      >&nbsp;
+                      <span class="watchlist-mobile-row-sub-title ACIPUBLIC_chg"
+                        >1.2</span
+                      >
+                    </div>
+                  </li>
+                  <li
+                    class="watchlist-mobile-table-row-style position-relative jss222"
+                  >
+                    <div
+                      class="table-first-column watchlist-row-content-align row-content-start"
+                    >
+                      <div>
+                        <div>
+                          <span
+                            onclick="onCompanySelect('GENEXIL','GENEXIL.PUBLIC')"
+                            class="watchlist-mobile-row-company-title"
+                            >GENEXIL</span
+                          >
+                          <span
+                            data-toggle="modal"
+                            data-target="#watchlistModal"
+                            ><i
+                              class="fa fa-info-circle watchlist-info-icon"
+                              aria-hidden="true"
+                            ></i
+                          ></span>
+                        </div>
+                        <div>
+                          <div>
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title ms-3"
+                              >T:
+                              <span
+                                class="GENEXILPUBLIC_turnover watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >&nbsp;
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title"
+                              >V:
+                              <span
+                                class="GENEXILPUBLIC_vol watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >&nbsp;
+                          </div>
+                          <br />
+                          <div>
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title"
+                              >H:
+                              <span
+                                class="GENEXILPUBLIC_high watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >&nbsp;
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title ms-3"
+                              >L:
+                              <span
+                                class="GENEXILPUBLIC_low watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="watchlist-table-middle-column watchlist-row-content-align"
+                    ></div>
+
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-price-column no-change-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title GENEXILPUBLIC_ltp"
+                        style="color: white !important"
+                        >78.3</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title GENEXILPUBLIC_chg"
+                        >0.00</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title GENEXILPUBLIC_chgper"
+                        >0.00%</span
+                      >
+                    </div>
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-change-column no-change-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title GENEXILPUBLIC_chg"
+                        style="color: white !important"
+                        >0.00</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title GENEXILPUBLIC_ltp"
+                        >78.3</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title GENEXILPUBLIC_chgper"
+                        >0.00%</span
+                      >
+                    </div>
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-perchange-column no-change-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title GENEXILPUBLIC_chgper"
+                        style="color: white !important"
+                        >0.00%</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title GENEXILPUBLIC_ltp"
+                        >78.3</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title GENEXILPUBLIC_chg"
+                        >0.00</span
+                      >
+                    </div>
+                  </li>
+                  <li
+                    class="watchlist-mobile-table-row-style position-relative jss222"
+                  >
+                    <div
+                      class="table-first-column watchlist-row-content-align row-content-start"
+                    >
+                      <div>
+                        <div>
+                          <span
+                            onclick="onCompanySelect('IPDC','IPDC.PUBLIC')"
+                            class="watchlist-mobile-row-company-title"
+                            >IPDC</span
+                          >
+                          <span
+                            data-toggle="modal"
+                            data-target="#watchlistModal"
+                            ><i
+                              class="fa fa-info-circle watchlist-info-icon"
+                              aria-hidden="true"
+                            ></i
+                          ></span>
+                        </div>
+                        <div>
+                          <div>
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title ms-3"
+                              >T:
+                              <span
+                                class="IPDCPUBLIC_turnover watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >&nbsp;
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title"
+                              >V:
+                              <span
+                                class="IPDCPUBLIC_vol watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >&nbsp;
+                          </div>
+                          <br />
+                          <div>
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title"
+                              >H:
+                              <span
+                                class="IPDCPUBLIC_high watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >&nbsp;
+                            <span
+                              class="watchlist-mobile-row-first-column-sub-title ms-3"
+                              >L:
+                              <span
+                                class="IPDCPUBLIC_low watchlist-mobile-first-column-sub-value"
+                                >-</span
+                              ></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="watchlist-table-middle-column watchlist-row-content-align"
+                    ></div>
+
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-price-column no-change-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title IPDCPUBLIC_ltp"
+                        style="color: white !important"
+                        >34.9</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title IPDCPUBLIC_chg"
+                        >0.00</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title IPDCPUBLIC_chgper"
+                        >0.00%</span
+                      >
+                    </div>
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-change-column no-change-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title IPDCPUBLIC_chg"
+                        style="color: white !important"
+                        >0.00</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title IPDCPUBLIC_ltp"
+                        >34.9</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title IPDCPUBLIC_chgper"
+                        >0.00%</span
+                      >
+                    </div>
+                    <div
+                      class="watchlist-mobile-table-end-column watchlist-row-content-align row-content-end watchlist-mobile-perchange-column no-change-mobile"
+                    >
+                      <span
+                        class="watchlist-mobile-row-title IPDCPUBLIC_chgper"
+                        style="color: white !important"
+                        >0.00%</span
+                      >
+                      <span
+                        class="watchlist-mobile-row-sub-title IPDCPUBLIC_ltp"
+                        >34.9</span
+                      >&nbsp;
+                      <span
+                        class="watchlist-mobile-row-sub-title IPDCPUBLIC_chg"
+                        >0.00</span
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="loading">
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          id="watchlistModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="watchlistModalLabel"
+        >
+          <div class="modal-dialog modal-xl" role="document">
+            <div class="watchlist-modal-content">
+              <div class="watchlist-modal-header">
+                <h4 class="watchlist-modal-title" id="watchlist-modal-title">
+                  Modal Header
+                </h4>
+              </div>
+              <div class="watchlist-modal-body">
+                <ul>
+                  <li>Buy</li>
+                  <li>Sell</li>
+                  <li>Set Alert</li>
+                  <li>Chart</li>
+                  <li>Info</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- <script src="js/echarts.js"></script> -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.3/echarts.min.js"
+     integrity="sha512-2L0h0GhoIHQEjti/1KwfjcbyaTHy+hPPhE1o5wTCmviYcPO/TD9oZvUxFQtWvBkCSTIpt+fjsx1CCx6ekb51gw=="
+     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <script
+   src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+   integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+   crossorigin="anonymous"
+ ></script>
+ <script
+   type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+   integrity="sha512-k2WPPrSgRFI6cTaHHhJdc8kAXaRM4JBFEDo1pPGGlYiOyv4vnA0Pp0G5XMYYxgAPmtmv/IIaQA6n5fLAyJaFMA=="
+   crossorigin="anonymous"
+   referrerpolicy="no-referrer"
+ ></script>
+ <script src="app.js"></script>
+  </body>
+</html>
