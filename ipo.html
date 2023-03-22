@@ -79,6 +79,21 @@
         cursor: pointer;
         border-radius: 9px;
       }
+      .card {
+    position: relative;
+    display: -ms-flexbox;
+    top: 1px;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: none;
+    border-radius: 0.25rem;
+}
+
     </style>
   </head>
   <body>
@@ -130,14 +145,137 @@
             role="tabpanel"
             aria-labelledby="nav-note-tab"
           >
-            <p>
-              This example use media queries to transform the sidebar to a top
-              navigation bar when the screen size is 700px or less.
-            </p>
+          <div class="accordion" id="accordionExample">
+          <div class="row">
+            <div class="col-2">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Collapsible Group Item #1
+              </button>
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Collapsible Group Item #2
+              </button>
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Collapsible Group Item #3
+              </button>
+             </div>
+             <div class="col-8">
+              <div class="card" style="background-color: blue;">
+            
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body" >
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card" style="background-color: rgb(255, 0, 174);"> 
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card" style="background-color: chocolate;">
+              
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+             </div>
+          </div>
+          </div>
+          <!-- <div>
+            <button onclick="showCard('card1')">Card 1</button>
+            <button onclick="showCard('card2')">Card 2</button>
+            <button onclick="showCard('card3')">Card 3</button>
+          </div>
+          
+          <div class="card" id="card1" style="display:none; background-color: aqua; height: 400px;">
+            <h3>Card 1</h3>
+            <p>Content for card 1</p>
+          </div>
+          
+          <div class="card" id="card2" style="display:none; background-color: rgb(53, 7, 126); height: 400px;">
+            <h3>Card 2</h3>
+            <p>Content for card 2</p>
+          </div>
+          
+          <div class="card" id="card3" style="display:none; background-color: rgb(202, 192, 12); height: 400px;">
+            <h3>Card 3</h3>
+            <p>Content for card 3</p>
+          </div> -->
+          <!-- <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
+          </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <div class="card card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- <button class="toggle-btn" data-card="card1">Button 1</button>
+          <button class="toggle-btn" data-card="card2">Button 2</button>
+          <button class="toggle-btn" data-card="card3">Button 3</button>
+          
+          <div class="card" id="card1" style="background-color: #3267b3;">Card 1</div>
+          <div class="card" id="card2" style="background-color: #4caf50;">Card 2</div>
+          <div class="card" id="card3" style="background-color: brown;">Card 3</div>
+           -->
           </div>
         </div>
       </div>
     </div>
+<script>
+ function showCard(cardId) {
+  // Get all card elements
+  // var cards = document.querySelectorAll('[id^="card"]');
+  var cards = document.querySelectorAll('.card');
+
+  // Hide all cards
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].style.display = "none";
+  }
+
+  // Show the selected card
+  var selectedCard = document.getElementById(cardId);
+  selectedCard.style.display = "block";
+}
+
+
+</script>
+
+<script>
+  const buttons = document.querySelectorAll('.toggle-btn');
+const cards = document.querySelectorAll('.card');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const cardToShow = document.getElementById(button.dataset.card);
+    
+    cards.forEach((card) => {
+      if (card === cardToShow) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+</script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
