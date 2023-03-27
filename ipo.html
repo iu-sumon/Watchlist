@@ -94,6 +94,28 @@
     border-radius: 0.25rem;
 }
 
+.container {
+  display: flex;
+  position: relative;
+}
+
+.left-side {
+  position: fixed;
+  width: 300px;
+  left: 0;
+}
+
+.right-side {
+  width: 100%;
+  height: 1000px; /* just for example */
+  overflow-x: scroll;
+  padding-left: 300px; /* set padding to the right of left-side div */
+}
+
+.right-side::-webkit-scrollbar {
+  width: 0; /* hide scrollbar */
+}
+
     </style>
   </head>
   <body>
@@ -163,14 +185,25 @@
             
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body" >
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <form id="myForm">
+                      <input type="text" name="name" value="John">
+                      <input type="email" name="email" value="john@example.com">
+                      <button type="submit">Submit</button>
+                    </form>
+                    
+                    
                   </div>
                 </div>
               </div>
               <div class="card" style="background-color: rgb(255, 0, 174);"> 
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <form action="">
+                      <label for="inputField">Input Field:</label>
+                      <input type="text" id="inputField" value="default" readonly>
+
+                      <button onclick="toggleEdit()">Edit</button>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -178,7 +211,17 @@
               
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <form id="myForm">
+                      <input type="text" id="input1" value="Input 1" readonly>
+                      <input type="text" id="input2" value="Input 2" readonly>
+                      <button type="button" id="editBtn">Edit</button>
+                      <button type="button" id="saveBtn" style="display:none">Save</button>
+                    </form>
+                    <div class="container">
+                      <div class="left-side">Left Side Content</div>
+                      <div class="right-side">Right Side Content</div>
+                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -238,7 +281,49 @@
         </div>
       </div>
     </div>
+    <script>
+      // Get the form and input fields
+const myForm = document.getElementById("myForm");
+const input1 = document.getElementById("input1");
+const input2 = document.getElementById("input2");
+
+// Get the edit and save buttons
+const editBtn = document.getElementById("editBtn");
+const saveBtn = document.getElementById("saveBtn");
+
+// Add event listener to the edit button
+editBtn.addEventListener("click", function() {
+  // Set the input fields to be editable
+  input1.removeAttribute("readonly");
+  input2.removeAttribute("readonly");
+
+  // Show the save button and hide the edit button
+  saveBtn.style.display = "block";
+  editBtn.style.display = "none";
+});
+
+// Add event listener to the save button
+saveBtn.addEventListener("click", function() {
+  // Set the input fields to be readonly again
+  input1.setAttribute("readonly", true);
+  input2.setAttribute("readonly", true);
+
+  // Hide the save button and show the edit button
+  saveBtn.style.display = "none";
+  editBtn.style.display = "block";
+});
+
+    </script>
 <script>
+   function toggleEdit() {
+    var inputField = document.getElementById("inputField");
+    if (inputField.readOnly) {
+      inputField.readOnly = false;
+      inputField.focus(); // Set focus to the input field when enabling editing
+    } else {
+      inputField.readOnly = true;
+    }
+  }
  function showCard(cardId) {
   // Get all card elements
   // var cards = document.querySelectorAll('[id^="card"]');
@@ -253,12 +338,20 @@
   var selectedCard = document.getElementById(cardId);
   selectedCard.style.display = "block";
 }
+var myForm11 = document.querySelector('#myForm');
+const submitBtn = myForm11.querySelector('button[type="submit"]');
+
+submitBtn.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent the form from submitting
+
+  const nameValue = myForm11.elements.name.value;
+  const emailValue = myForm11.elements.email.value;
+
+  console.log(nameValue, emailValue);
+});
 
 
-</script>
-
-<script>
-  const buttons = document.querySelectorAll('.toggle-btn');
+const buttons = document.querySelectorAll('.toggle-btn');
 const cards = document.querySelectorAll('.card');
 
 buttons.forEach((button) => {
@@ -276,6 +369,14 @@ buttons.forEach((button) => {
 });
 
 </script>
+
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+integrity="sha512-k2WPPrSgRFI6cTaHHhJdc8kAXaRM4JBFEDo1pPGGlYiOyv4vnA0Pp0G5XMYYxgAPmtmv/IIaQA6n5fLAyJaFMA=="
+crossorigin="anonymous"
+referrerpolicy="no-referrer"
+></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
