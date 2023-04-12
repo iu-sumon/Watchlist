@@ -725,11 +725,17 @@ label {
 
 
 /* Style inputs, select elements and textareas */
-input[type=text], select, textarea{
+/* input[type=text], select, textarea{
   width: 100%;
   padding: 12px 12px 12px 26px;
   box-sizing: border-box;
   resize: vertical;
+} */
+
+
+.option-1
+{
+  background-color: #00dcff;
 }
 
 /* Style the label to display next to the inputs */

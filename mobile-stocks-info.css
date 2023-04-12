@@ -200,11 +200,13 @@
   }
   
   .highlight-column-name {
-    padding: 0 2px 0 1px;
-    font-size: 10px;
+     padding: 0 2px 0 1px; 
+
+    font-size: 12px;
     white-space: nowrap;
-    color: var(--highlight-subtitle-color);
+    /* color: var(--highlight-subtitle-color); */
   }
+
   
   .highlight-column-value {
     padding-top: 4px;
@@ -228,7 +230,15 @@
     border-collapse: collapse;
     table-layout: fixed;
   }
-  
+  select{
+    width: 100%;
+    padding: 0px 20px 0px 20px;
+    box-sizing: border-box;
+    resize: vertical;
+    /* border-radius: 20px; */
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px
+  }
   .small-font {
     font-size: 8px;
   }
@@ -893,10 +903,10 @@
   }
   
   .data-table-row {
-    height: 36px;
+    /* height: 36px; */
     display: table-row;
     padding: 10px;
-    line-height: 35px;
+    line-height: 27px;
   }
   
   .data-table-row-first-column {
@@ -929,6 +939,15 @@
   .data-table-center tr:first-child:hover {
     background-color: var(--data-table-center-tr-first-child-hover-bg);
   }
+
+  option {
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    background-color: #999c9d;
+}
   /* Modal style */
   .mobile-stock-insider-modal {
     position: fixed;
@@ -1002,9 +1021,9 @@
     padding: 5px;
   }
   
-  .blur_data_table {
+  /* .blur_data_table {
     filter: blur(3px);
-  }
+  } */
   
   .stock-info-icon-up-down {
     border: 1px solid #45b6fe;
@@ -1096,6 +1115,7 @@
     color: var(--data-table-color);
     display: table;
     font-size: 12px;
+    width: 100%;
   }
   
   .data-table-annual-quarterly th,
@@ -1113,7 +1133,7 @@
     text-overflow: ellipsis;
     left: -3px;
     z-index: 10;
-    background: var(--data-table-annual-quarterly-first-child-bg);
+    /* background: var(--data-table-annual-quarterly-first-child-bg); */
   }
   
   .data-table-annual-quarterly tr th:first-child {
