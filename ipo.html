@@ -13,110 +13,6 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-
-    <style>
-      body {
-        margin: 0;
-        font-family: "Lato", sans-serif;
-        overflow-x: hidden;
-        background-color: black;
-        color: #f1f1f1;
-      }
-
-      .sidebar {
-        margin: 0;
-        padding: 0;
-        width: 200px;
-        color: #fff;
-        background-color: #020b28;
-        position: fixed;
-        height: 100%;
-        overflow: auto;
-      }
-      .nav {
-        display: -ms-flexbox;
-        display: flex;
-        flex-direction: column;
-        padding-left: 0;
-        margin-bottom: 0;
-        list-style: none;
-      }
-      .content {
-        margin-left: 200px;
-        padding: 1px 16px;
-        height: 1000px;
-      }
-
-      .sw-nav-link {
-        border: 1px solid rgba(0, 0, 0, 0);
-        cursor: pointer;
-        height: 41px;
-        display: inline-block;
-        padding: 0px 10px;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 41px;
-      }
-      .sw-nav-link.active,
-      .show > .sw-nav-link {
-        color: #fff;
-        background-color: #3267b3;
-        width: 100%;
-      }
-      a {
-        text-decoration: none !important;
-      }
-      .button {
-        background-color: #4caf50;
-        border: none;
-        color: white;
-        padding: 15px 141px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 9px;
-      }
-      .card {
-    position: relative;
-    display: -ms-flexbox;
-    top: 1px;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: none;
-    border-radius: 0.25rem;
-}
-
-.container {
-  display: flex;
-  position: relative;
-}
-
-.left-side {
-  position: fixed;
-  width: 300px;
-  left: 0;
-}
-
-.right-side {
-  width: 100%;
-  height: 1000px; /* just for example */
-  overflow-x: scroll;
-  padding-left: 300px; /* set padding to the right of left-side div */
-}
-
-.right-side::-webkit-scrollbar {
-  width: 0; /* hide scrollbar */
-}
-
-    </style>
   </head>
   <body>
     <div class="row">
@@ -167,68 +63,124 @@
             role="tabpanel"
             aria-labelledby="nav-note-tab"
           >
-          <div class="accordion" id="accordionExample">
-          <div class="row">
-            <div class="col-2">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                Collapsible Group Item #1
-              </button>
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Collapsible Group Item #2
-              </button>
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Collapsible Group Item #3
-              </button>
-             </div>
-             <div class="col-8">
-              <div class="card" style="background-color: blue;">
-            
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                  <div class="card-body" >
-                    <form id="myForm">
-                      <input type="text" name="name" value="John">
-                      <input type="email" name="email" value="john@example.com">
-                      <button type="submit">Submit</button>
-                    </form>
-                    
-                    
-                  </div>
+            <div class="accordion" id="accordionExample">
+              <div class="row">
+                <div class="col-2">
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="false"
+                    aria-controls="collapseOne"
+                  >
+                    Collapsible Group Item #1
+                  </button>
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Collapsible Group Item #2
+                  </button>
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Collapsible Group Item #3
+                  </button>
                 </div>
-              </div>
-              <div class="card" style="background-color: rgb(255, 0, 174);"> 
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <form action="">
-                      <label for="inputField">Input Field:</label>
-                      <input type="text" id="inputField" value="default" readonly>
-
-                      <button onclick="toggleEdit()">Edit</button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-              <div class="card" style="background-color: chocolate;">
-              
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <form id="myForm">
-                      <input type="text" id="input1" value="Input 1" readonly>
-                      <input type="text" id="input2" value="Input 2" readonly>
-                      <button type="button" id="editBtn">Edit</button>
-                      <button type="button" id="saveBtn" style="display:none">Save</button>
-                    </form>
-                    <div class="container">
-                      <div class="left-side">Left Side Content</div>
-                      <div class="right-side">Right Side Content</div>
+                <div class="col-8">
+                  <div class="card" style="background-color: blue">
+                    <div
+                      id="collapseOne"
+                      class="collapse"
+                      aria-labelledby="headingOne"
+                      data-parent="#accordionExample"
+                    >
+                      <div class="card-body">
+                        <form id="myForm">
+                          <input type="text" name="name" value="John" />
+                          <input
+                            type="email"
+                            name="email"
+                            value="john@example.com"
+                          />
+                          <button type="submit">Submit</button>
+                        </form>
+                      </div>
                     </div>
-                    
+                  </div>
+                  <div class="card" style="background-color: rgb(255, 0, 174)">
+                    <div
+                      id="collapseTwo"
+                      class="collapse"
+                      aria-labelledby="headingTwo"
+                      data-parent="#accordionExample"
+                    >
+                      <div class="card-body">
+                        <form action="">
+                          <label for="inputField">Input Field:</label>
+                          <input
+                            type="text"
+                            id="inputField"
+                            value="default"
+                            readonly
+                          />
+
+                          <button onclick="toggleEdit()">Edit</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card" style="background-color: chocolate">
+                    <div
+                      id="collapseThree"
+                      class="collapse"
+                      aria-labelledby="headingThree"
+                      data-parent="#accordionExample"
+                    >
+                      <div class="card-body">
+                        <form id="myForm">
+                          <input
+                            type="text"
+                            id="input1"
+                            value="Input 1"
+                            readonly
+                          />
+                          <input
+                            type="text"
+                            id="input2"
+                            value="Input 2"
+                            readonly
+                          />
+                          <button type="button" id="editBtn">Edit</button>
+                          <button
+                            type="button"
+                            id="saveBtn"
+                            style="display: none"
+                          >
+                            Save
+                          </button>
+                        </form>
+                        <div class="container">
+                          <div class="left-side">Left Side Content</div>
+                          <div class="right-side">Right Side Content</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-             </div>
-          </div>
-          </div>
-          <!-- <div>
+            </div>
+            <!-- <div>
             <button onclick="showCard('card1')">Card 1</button>
             <button onclick="showCard('card2')">Card 2</button>
             <button onclick="showCard('card3')">Card 3</button>
@@ -248,7 +200,7 @@
             <h3>Card 3</h3>
             <p>Content for card 3</p>
           </div> -->
-          <!-- <p>
+            <!-- <p>
             <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
@@ -269,7 +221,7 @@
               </div>
             </div>
           </div> -->
-          <!-- <button class="toggle-btn" data-card="card1">Button 1</button>
+            <!-- <button class="toggle-btn" data-card="card1">Button 1</button>
           <button class="toggle-btn" data-card="card2">Button 2</button>
           <button class="toggle-btn" data-card="card3">Button 3</button>
           
@@ -281,102 +233,14 @@
         </div>
       </div>
     </div>
-    <script>
-      // Get the form and input fields
-const myForm = document.getElementById("myForm");
-const input1 = document.getElementById("input1");
-const input2 = document.getElementById("input2");
 
-// Get the edit and save buttons
-const editBtn = document.getElementById("editBtn");
-const saveBtn = document.getElementById("saveBtn");
-
-// Add event listener to the edit button
-editBtn.addEventListener("click", function() {
-  // Set the input fields to be editable
-  input1.removeAttribute("readonly");
-  input2.removeAttribute("readonly");
-
-  // Show the save button and hide the edit button
-  saveBtn.style.display = "block";
-  editBtn.style.display = "none";
-});
-
-// Add event listener to the save button
-saveBtn.addEventListener("click", function() {
-  // Set the input fields to be readonly again
-  input1.setAttribute("readonly", true);
-  input2.setAttribute("readonly", true);
-
-  // Hide the save button and show the edit button
-  saveBtn.style.display = "none";
-  editBtn.style.display = "block";
-});
-
-    </script>
-<script>
-   function toggleEdit() {
-    var inputField = document.getElementById("inputField");
-    if (inputField.readOnly) {
-      inputField.readOnly = false;
-      inputField.focus(); // Set focus to the input field when enabling editing
-    } else {
-      inputField.readOnly = true;
-    }
-  }
- function showCard(cardId) {
-  // Get all card elements
-  // var cards = document.querySelectorAll('[id^="card"]');
-  var cards = document.querySelectorAll('.card');
-
-  // Hide all cards
-  for (var i = 0; i < cards.length; i++) {
-    cards[i].style.display = "none";
-  }
-
-  // Show the selected card
-  var selectedCard = document.getElementById(cardId);
-  selectedCard.style.display = "block";
-}
-var myForm11 = document.querySelector('#myForm');
-const submitBtn = myForm11.querySelector('button[type="submit"]');
-
-submitBtn.addEventListener('click', (event) => {
-  event.preventDefault(); // Prevent the form from submitting
-
-  const nameValue = myForm11.elements.name.value;
-  const emailValue = myForm11.elements.email.value;
-
-  console.log(nameValue, emailValue);
-});
-
-
-const buttons = document.querySelectorAll('.toggle-btn');
-const cards = document.querySelectorAll('.card');
-
-buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const cardToShow = document.getElementById(button.dataset.card);
-    
-    cards.forEach((card) => {
-      if (card === cardToShow) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  });
-});
-
-</script>
-
-<script
-type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
-integrity="sha512-k2WPPrSgRFI6cTaHHhJdc8kAXaRM4JBFEDo1pPGGlYiOyv4vnA0Pp0G5XMYYxgAPmtmv/IIaQA6n5fLAyJaFMA=="
-crossorigin="anonymous"
-referrerpolicy="no-referrer"
-></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+      integrity="sha512-k2WPPrSgRFI6cTaHHhJdc8kAXaRM4JBFEDo1pPGGlYiOyv4vnA0Pp0G5XMYYxgAPmtmv/IIaQA6n5fLAyJaFMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
