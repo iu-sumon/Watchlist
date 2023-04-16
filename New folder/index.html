@@ -39,15 +39,15 @@
       }
 
       /* modal */
-      .order_window_modal_container {
-        top: -44px;
+      .sector_window_modal_container {
+        top: 3px;
     left: 33px;
-        text-align: center;
-        background-color: #3e444a;
-        color: #fff;
-        width: 23% !important;
-        height: 274px;
-        overflow-x: scroll;
+    text-align: center;
+    background-color: #3e444a;
+    color: #fff;
+    width: 36% !important;
+    height: 274px;
+    overflow-x: scroll;
       }
       input#sector_execution_field {
         background-color: transparent;
@@ -85,7 +85,7 @@
   </head>
   <body>
     <div>
-      <div class="row pl-1 pt-1">
+      <div class="row pl-1 pt-1" style="overflow: hidden;">
         <div class="col-12">
           <div
             class="nav nav-tabs d-flex align-items-center navbar-fixed-top"
@@ -4161,7 +4161,7 @@
       <div id="sectorwindowModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
           <!-- Modal content-->
-          <div class="modal-content order_window_modal_container">
+          <div class="modal-content sector_window_modal_container">
             <div class="modal-body p-0">
               <p class="sector_execution_mode" data-id="1">ALL</p>
               <p class="sector_execution_mode" data-id="2">Bank</p>
